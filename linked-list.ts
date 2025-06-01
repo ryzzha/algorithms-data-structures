@@ -28,9 +28,9 @@ export class LinkedList<T> {
         }
     
         return index;
-      }
+    }
 
-      delete(index: number = 0): number {
+    delete(index: number = 0): number {
         if (!this.head) return -1;
     
         if (index === 0) {
@@ -43,14 +43,14 @@ export class LinkedList<T> {
         }
     
         return index;
-      }
+    }
     
-      read(index: number = 0): T | undefined {
+    read(index: number = 0): T | undefined {
         const node = this.find(index);
         return node?.data;
-      }
+    }
     
-      indexOf(value: T): number | undefined {
+    indexOf(value: T): number | undefined {
         let current = this.head;
         let i = 0;
     
@@ -61,18 +61,18 @@ export class LinkedList<T> {
         }
     
         return undefined;
-      }
+    }
     
-      each(callback: (data: T) => void): void {
+    each(callback: (data: T) => void): void {
         let current = this.head;
     
         while (current) {
           callback(current.data);
           current = current.next;
         }
-      }
+    }
     
-      private find(index: number): Node<T> | null {
+    private find(index: number): Node<T> | null {
         let current = this.head;
         let i = 0;
     
@@ -82,7 +82,7 @@ export class LinkedList<T> {
         }
     
         return current ?? null;
-      }
+    }
 }
 
 const list = new LinkedList('first');
